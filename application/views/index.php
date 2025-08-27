@@ -99,24 +99,6 @@ $name       =	$this->db->get_where('login' , array('login_id'=>$id))->row()->nam
 
               <!-- <h3 class="dark_bg_color">Pages</h3> -->
               <ul class="menu-click">
-                <!-- <li class="">
-                  <a href="#">
-                    <i class="fa fa-file-text"></i>
-                    Disposes
-                  </a>
-                  <ul>
-                    <li>
-                      <a href="admin_posts.html">
-                        Disposable Gadgets
-                      </a>
-                    </li>
-                    <li>
-                      <a href="admin_post.html">
-                        Single Post
-                      </a>
-                    </li>
-                  </ul>
-                </li> -->
                 <li class="<?php if ($page_name=="gadgets"){?>active-submenu<?php }?>">
                   <a class="<?php if($page_name=="gadgets"){ ?>active-link<?php }?>" href="<?php echo base_url()?>admin/gadgets">
                     <i class="rt-icon2-tv"></i>
@@ -137,6 +119,68 @@ $name       =	$this->db->get_where('login' , array('login_id'=>$id))->row()->nam
                     Clients
                   </a>
 
+                </li>
+              </ul>
+                
+                <?php }elseif($role=="collector"){ ?>
+
+                    <div class="media-body media-middle">
+                        <h4><?Php echo ucwords($name); ?></h4>
+                        <?Php echo ucwords($role); ?>
+
+                      </div>
+
+                    </div>
+                  </a>
+                  <ul class="dark_bg_color">
+                    <li class="<?php if($page_name=="profile"){ ?>active-submenu<?php }?>">
+                      <a class="<?php if($page_name=="profile"){ ?>active-link<?php }?>" href="<?php echo base_url() ?>collector/profile">
+                        <i class="fa fa-user"></i>
+                        Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?php echo base_url()?>logout">
+                        <i class="fa fa-sign-out"></i>
+                        Log Out
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- main side nav start -->
+            <nav class="mainmenu_side_wrapper">
+              <!-- <h3 class="dark_bg_color">Dashboard</h3> -->
+              <ul class="menu-click">
+                <li class="<?php if($page_name=="dashboard"){ ?>active-submenu<?php }?>">
+                  <a class="<?php if($page_name=="dashboard"){ ?>active-link<?php }?>" href="<?php echo base_url()?>collector/dashboard">
+                    <i class="fa fa-th-large"></i>
+                    Dashboard
+                  </a>
+
+                </li>
+              </ul>
+
+              <!-- <h3 class="dark_bg_color">Pages</h3> -->
+              <ul class="menu-click">
+                <li class="<?php if($page_name=="disposes"){ ?>active-submenu<?php }?>">
+                  <a class="<?php if($page_name=="disposes"){ ?>active-link<?php }?>" href="<?php echo base_url()?>collector/disposes">
+                    <i class="rt-icon2-cup"></i>
+                    Disposes
+                  </a>
+                </li>
+                <li class="<?php if($page_name=="map"){ ?>active-submenu<?php }?>">
+                  <a class="<?php if($page_name=="map"){ ?>active-link<?php }?>" href="<?php echo base_url()?>collector/map">
+                    <i class="fa fa-map-marker"></i>
+                    Map
+                  </a>
+                </li>
+                <li class="<?php if($page_name=="logs"){ ?>active-submenu<?php }?>">
+                  <a class="<?php if($page_name=="logs"){ ?>active-link<?php }?>" href="<?php echo base_url()?>collector/logs">
+                    <i class="fa fa-list"></i>
+                    Logs
+                  </a>
                 </li>
               </ul>
                 
