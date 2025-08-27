@@ -1,70 +1,54 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
 <div class="row">
-	<!-- <div class="col-md-8"> -->
-		<div class="col-md-12">
-
-			<!-- <h4>Tabs</h4> -->
-
-			<!-- Nav tabs -->
-			<ul class="nav nav-tabs" role="tablist">
-				<li class="active"><a href="#tab1" role="tab" data-toggle="tab"><i class="fa fa-users"></i> All System Logs</a></li>
-			</ul>
-
-			<!-- Tab panes -->
-			<div class="tab-content tab-custom top-color-border">
-				<div class="tab-pane fade in active" id="tab1">
-					<div class="row">
-						<div class="col-xs-12 col-md-12">
-					      <!-- <div class="with_border with_padding"> -->
-					      	<h4>All Logs (<?php echo $countLogs ?>)</h4>
-						    <hr>
-					       <div class="table-responsive">
-						       	<table class="table table-hover" id="example23">
-									<thead>
-										<tr>
-											<th>#</th>
-											<th>Message</th>
-											<th>Date and Time</th>
-											<th>Trigger user</th>
-										</tr>
-									</thead>
-									<tbody>
-
-						               <?php
-							               $i=1;
-							               foreach($getLogs as $row):
-							                $message=$row['message'];
-							                $trigger_date=$row['trigger_date'];
-							                $priority=$row['priority'];
-							                $user_id=$row['user_id'];
-						                ?>
-										<tr>
-											<td><?php echo $i++; ?>.</td>
-											<td><?php echo ucwords($message); ?></td>
-											<td><?php echo 'On <small><b>'.date('D, d/M/Y',$trigger_date).'</b> at <b>'.date('h:i:a',$trigger_date) ?></td>
-											<td>
-												<?php if($user_id==1 || $priority!=2){?>
-													<span class="label label-info"><i class="fa fa-user"></i> Admin</span>
-												<?php }else{?>
-													<span class="label label-warning"><i class="fa fa-user"></i> Client</span>
-												<?php }?>
-											</td>
-										</tr>
-									<?php endforeach; ?>
-									</tbody>
-								</table>
-					       </div>
-					      <!-- .table responsive -->
-					    </div>
-					    <!-- .col-* -->
-					</div>
-					<!-- .row-* -->
-				</div>
-			</div>
-
-		</div>
-		<!-- .with_border -->
-
-	<!-- </div> -->
-
+  <div class="col-md-12">
+    <h3 class="dashboard-page-title">Collector Logs</h3>
+    <p class="text-muted">View all system activity logs</p>
+  </div>
 </div>
-<!-- .row -->
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="with_border with_padding">
+      <h3 class="module-title darkgrey_bg_color">System Logs</h3>
+      <div class="admin-scroll-panel scrollbar-macosx" style="max-height: 600px;">
+        <ul class="list1 no-bullets">
+          <?php if(isset($logs_query) && is_array($logs_query) && count($logs_query) > 0): ?>
+            <?php foreach($logs_query as $log): ?>
+              <li>
+                <div class="media small-teaser">
+                  <div class="media-left media-middle">
+                    <div class="teaser_icon label-success round">
+                      <i class="fa fa-check"></i>
+                    </div>
+                  </div>
+                                     <div class="media-body media-left">
+                     <span class="grey"><?php echo isset($log['message']) ? $log['message'] : 'No message'; ?></span>
+                     <?php if(isset($log['trigger_date'])): ?>
+                       <br><small class="text-muted"><?php echo date('M d, Y g:i A', $log['trigger_date']); ?></small>
+                     <?php endif; ?>
+                   </div>
+                </div>
+              </li>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <li>
+              <div class="media small-teaser">
+                <div class="media-left media-middle">
+                  <div class="teaser_icon label-info round">
+                    <i class="fa fa-info"></i>
+                  </div>
+                </div>
+                <div class="media-body media-left">
+                  <span class="grey">No logs available</span>
+                </div>
+              </div>
+            </li>
+          <?php endif; ?>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
