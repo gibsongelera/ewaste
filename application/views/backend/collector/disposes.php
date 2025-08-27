@@ -31,13 +31,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <tr>
                   <th>#</th>
                   <th>Transaction Code</th>
-                  <th>Client Name</th>
-                  <th>Gadget Type</th>
-                  <th>Quantity</th>
-                  <th>Total Amount</th>
+                  <th>Summary</th>
+                  <th>Collection Date</th>
                   <th>Payment Status</th>
                   <th>Transaction Status</th>
-                  <th>Collection Date</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -49,11 +46,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 ?>
                 <tr>
                   <td><?php echo $i++; ?>.</td>
-                  <td><?php echo $dispose['transaction_code']; ?></td>
-                  <td><?php echo $dispose['name']; ?></td>
-                  <td><?php echo $dispose['gadget_type']; ?></td>
-                  <td><?php echo $dispose['quantity']; ?></td>
-                  <td>₱<?php echo number_format($dispose['transaction_total'], 2); ?></td>
+                  <td>
+                    <a href="<?php echo base_url(); ?>collector/disposes/view/<?php echo $dispose['transaction_code']; ?>">
+                      <b><?php echo $dispose['transaction_code']; ?></b>
+                    </a>
+                  </td>
+                  <td>
+                    <b>Client:</b> <?php echo ucwords($dispose['name']); ?><br>
+                    <b>Phone:</b> <?php echo isset($dispose['phone']) ? $dispose['phone'] : 'N/A'; ?><br>
+                    <b>Gadgets:</b> <?php echo $this->qm->disposes('countDisposes', $dispose['transaction_id']); ?><br>
+                    <b>Amount:</b> ₱<?php echo number_format($dispose['transaction_total'], 2); ?>
+                  </td>
+                  <td><?php echo date('M d, Y', $dispose['collection_date']); ?></td>
                   <td>
                     <?php if($dispose['payment_status'] == 1): ?>
                       <span class="label label-success"><i class="fa fa-check"></i> Paid</span>
@@ -70,7 +74,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <span class="label label-success"><i class="fa fa-check-circle"></i> Completed</span>
                     <?php endif; ?>
                   </td>
-                  <td><?php echo date('M d, Y', strtotime($dispose['collection_date'])); ?></td>
                   <td>
                     <a href="<?php echo base_url(); ?>collector/disposes/view/<?php echo $dispose['transaction_code']; ?>" 
                        class="btn btn-info btn-sm">
@@ -109,10 +112,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <tr>
                   <th>#</th>
                   <th>Transaction Code</th>
-                  <th>Client Name</th>
-                  <th>Gadget Type</th>
-                  <th>Quantity</th>
-                  <th>Total Amount</th>
+                  <th>Summary</th>
                   <th>Collection Date</th>
                   <th>Actions</th>
                 </tr>
@@ -125,12 +125,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 ?>
                 <tr>
                   <td><?php echo $i++; ?>.</td>
-                  <td><?php echo $dispose['transaction_code']; ?></td>
-                  <td><?php echo $dispose['name']; ?></td>
-                  <td><?php echo $dispose['gadget_type']; ?></td>
-                  <td><?php echo $dispose['quantity']; ?></td>
-                  <td>₱<?php echo number_format($dispose['transaction_total'], 2); ?></td>
-                  <td><?php echo date('M d, Y', strtotime($dispose['collection_date'])); ?></td>
+                  <td>
+                    <a href="<?php echo base_url(); ?>collector/disposes/view/<?php echo $dispose['transaction_code']; ?>">
+                      <b><?php echo $dispose['transaction_code']; ?></b>
+                    </a>
+                  </td>
+                  <td>
+                    <b>Client:</b> <?php echo ucwords($dispose['name']); ?><br>
+                    <b>Phone:</b> <?php echo isset($dispose['phone']) ? $dispose['phone'] : 'N/A'; ?><br>
+                    <b>Gadgets:</b> <?php echo $this->qm->disposes('countDisposes', $dispose['transaction_id']); ?><br>
+                    <b>Amount:</b> ₱<?php echo number_format($dispose['transaction_total'], 2); ?>
+                  </td>
+                  <td><?php echo date('M d, Y', $dispose['collection_date']); ?></td>
                   <td>
                     <a href="<?php echo base_url(); ?>collector/disposes/view/<?php echo $dispose['transaction_code']; ?>" 
                        class="btn btn-info btn-sm">
@@ -169,10 +175,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <tr>
                   <th>#</th>
                   <th>Transaction Code</th>
-                  <th>Client Name</th>
-                  <th>Gadget Type</th>
-                  <th>Quantity</th>
-                  <th>Total Amount</th>
+                  <th>Summary</th>
                   <th>Collection Date</th>
                   <th>Actions</th>
                 </tr>
@@ -185,12 +188,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 ?>
                 <tr>
                   <td><?php echo $i++; ?>.</td>
-                  <td><?php echo $dispose['transaction_code']; ?></td>
-                  <td><?php echo $dispose['name']; ?></td>
-                  <td><?php echo $dispose['gadget_type']; ?></td>
-                  <td><?php echo $dispose['quantity']; ?></td>
-                  <td>₱<?php echo number_format($dispose['transaction_total'], 2); ?></td>
-                  <td><?php echo date('M d, Y', strtotime($dispose['collection_date'])); ?></td>
+                  <td>
+                    <a href="<?php echo base_url(); ?>collector/disposes/view/<?php echo $dispose['transaction_code']; ?>">
+                      <b><?php echo $dispose['transaction_code']; ?></b>
+                    </a>
+                  </td>
+                  <td>
+                    <b>Client:</b> <?php echo ucwords($dispose['name']); ?><br>
+                    <b>Phone:</b> <?php echo isset($dispose['phone']) ? $dispose['phone'] : 'N/A'; ?><br>
+                    <b>Gadgets:</b> <?php echo $this->qm->disposes('countDisposes', $dispose['transaction_id']); ?><br>
+                    <b>Amount:</b> ₱<?php echo number_format($dispose['transaction_total'], 2); ?>
+                  </td>
+                  <td><?php echo date('M d, Y', $dispose['collection_date']); ?></td>
                   <td>
                     <a href="<?php echo base_url(); ?>collector/disposes/view/<?php echo $dispose['transaction_code']; ?>" 
                        class="btn btn-info btn-sm">
@@ -233,3 +242,45 @@ $(document).ready(function() {
   $('#pendingDisposesTable').DataTable();
 });
 </script>
+
+<!-- Approve Modal -->
+<div class="modal fade" id="approveModal" tabindex="-1" role="dialog" aria-labelledby="approveModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="approveModalLabel">Approve Dispose</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to approve this dispose?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <a id="approve_link" href="#" class="btn btn-success">Approve</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Collect Modal -->
+<div class="modal fade" id="collectModal" tabindex="-1" role="dialog" aria-labelledby="collectModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="collectModalLabel">Mark as Collected</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to mark this dispose as collected?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <a id="collect_link" href="#" class="btn btn-primary">Mark Collected</a>
+      </div>
+    </div>
+  </div>
+</div>
