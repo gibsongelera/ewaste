@@ -129,8 +129,9 @@ class Query_model extends CI_Model {
             return true;
         }
         if($param1=="adminQueryDisposesAll"){
-            $this->db->select('*');
+            $this->db->select('transaction.*, disposes.gadget_type, disposes.quantity');
             $this->db->from('transaction');
+            $this->db->join('disposes', 'disposes.transaction_id = transaction.transaction_id', 'left');
             $this->db->order_by('transaction_id','desc');
             return $this->db->get()->result_array();
         }
@@ -168,8 +169,9 @@ class Query_model extends CI_Model {
         // All other admin disposes queries do NOT filter hidden
         if($param1=="adminApprovedQueryDisposes"){
             $where=array("payment_status"=>1);
-            $this->db->select('*');
+            $this->db->select('transaction.*, disposes.gadget_type, disposes.quantity');
             $this->db->from('transaction');
+            $this->db->join('disposes', 'disposes.transaction_id = transaction.transaction_id', 'left');
             $this->db->where($where);
             $this->db->order_by('transaction_id','desc');
             return $this->db->get()->result_array();
@@ -177,8 +179,9 @@ class Query_model extends CI_Model {
         }//end
         if($param1=="adminPendingQueryDisposes"){
             $where=array("payment_status"=>0);
-            $this->db->select('*');
+            $this->db->select('transaction.*, disposes.gadget_type, disposes.quantity');
             $this->db->from('transaction');
+            $this->db->join('disposes', 'disposes.transaction_id = transaction.transaction_id', 'left');
             $this->db->where($where);
             $this->db->order_by('transaction_id','desc');
             return $this->db->get()->result_array();
