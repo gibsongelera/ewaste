@@ -1,0 +1,67 @@
+/* Custom styles to fix layout issues */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container-fluid {
+    padding: 15px;
+}
+
+.form-control {
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.input-group {
+    width: 100%;
+}
+
+.theme_button {
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.theme_button:hover {
+    background-color: #1976D2;
+}
+
+.tab-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-tabs > li.active > a {
+    background-color: #fff;
+    border-color: #ddd #ddd transparent;
+}
+
+.preloader {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Fix for gray overlay */
+.admin {
+    background: #fff;
+}
+
+#canvas, #box_wrapper {
+    background: #fff;
+}
+
+.section_padding_top_50 {
+    padding-top: 50px;
+}
+
+.section_padding_bottom_50 {
+    padding-bottom: 50px;
+}

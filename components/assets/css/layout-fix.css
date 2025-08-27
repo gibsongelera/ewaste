@@ -1,0 +1,195 @@
+/* Fix for rotated text and layout issues */
+.text-rotation-fix {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+}
+
+.page-header {
+    transform: none !important;
+    text-align: left;
+}
+
+.sidebar-text {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+}
+
+/* Fix vertical text in navigation */
+.nav-item span, 
+.nav-link span {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    display: inline-block;
+}
+
+/* Fix for any rotated elements */
+[class*="rotate-"],
+[class*="transform-"] {
+    transform: none !important;
+}
+
+/* Ensure proper text alignment */
+.text-vertical {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    transform: none !important;
+}
+
+/* Fix for navigation items */
+.nav-sidebar .nav-item {
+    transform: none !important;
+}
+
+/* Fix for headers and titles */
+h1, h2, h3, h4, h5, h6,
+.title, .header-title {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+}
+
+/* Fix for menu items */
+.menu-item {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+}
+
+/* Fix for any transformed containers */
+.transformed-container {
+    transform: none !important;
+}
+
+/* Ensure proper text direction */
+[dir="rtl"],
+[dir="ltr"] {
+    transform: none !important;
+}
+
+/* Specific fixes for admin dashboard */
+.admin h1,
+.admin h2,
+.admin h3,
+.admin h4,
+.admin h5,
+.admin h6,
+.dashboard-page-title,
+.module-title {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    display: block !important;
+}
+
+/* Fix for any text that might be rotated */
+.admin *,
+.dashboard-page-title *,
+.module-title * {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+}
+
+/* Override any problematic CSS that might cause vertical text */
+.admin .row,
+.admin .col-md-4,
+.admin .col-md-8,
+.admin .text-md-right {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+}
+
+/* Fix for sparklines title */
+.sparklines-title {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+}
+
+/* Fix for any content that might be affected by transforms */
+.admin .container,
+.admin .row,
+.admin [class*="col-"] {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+}
+
+/* Additional specific fixes for dashboard elements */
+.dashboard-page-title,
+.dashboard-page-title h3,
+.dashboard-page-title * {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    display: block !important;
+    white-space: normal !important;
+    word-wrap: normal !important;
+    overflow-wrap: normal !important;
+}
+
+.sparklines-title,
+.sparklines-title h3,
+.sparklines-title * {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    display: block !important;
+    white-space: normal !important;
+    word-wrap: normal !important;
+    overflow-wrap: normal !important;
+}
+
+/* Fix for any sup elements */
+sup {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    vertical-align: super !important;
+    font-size: smaller !important;
+}
+
+/* Comprehensive fix for all text elements in admin dashboard */
+.admin body,
+.admin html,
+.admin div,
+.admin span,
+.admin p,
+.admin h1,
+.admin h2,
+.admin h3,
+.admin h4,
+.admin h5,
+.admin h6,
+.admin a,
+.admin label,
+.admin input,
+.admin textarea,
+.admin select,
+.admin button,
+.admin table,
+.admin th,
+.admin td,
+.admin li,
+.admin ul,
+.admin ol {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    direction: ltr !important;
+}
+
+/* Override any CSS that might be causing the vertical text issue */
+* {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+}
+
+/* Specific override for any problematic CSS */
+[style*="transform"],
+[style*="writing-mode"],
+[style*="text-orientation"] {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+}
