@@ -51,8 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <td><?php echo $i++; ?>.</td>
                   <td><?php echo $dispose['transaction_code']; ?></td>
                   <td><?php echo $dispose['name']; ?></td>
-                  <td><?php echo $dispose['gadget_type']; ?></td>
-                  <td><?php echo $dispose['quantity']; ?></td>
+                  <td><?php echo isset($dispose['gadget_type']) ? $dispose['gadget_type'] : 'N/A'; ?></td>
+                  <td><?php echo isset($dispose['quantity']) ? $dispose['quantity'] : 'N/A'; ?></td>
                   <td>₱<?php echo number_format($dispose['transaction_total'], 2); ?></td>
                   <td>
                     <?php if($dispose['payment_status'] == 1): ?>
@@ -127,8 +127,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <td><?php echo $i++; ?>.</td>
                   <td><?php echo $dispose['transaction_code']; ?></td>
                   <td><?php echo $dispose['name']; ?></td>
-                  <td><?php echo $dispose['gadget_type']; ?></td>
-                  <td><?php echo $dispose['quantity']; ?></td>
+                  <td><?php echo isset($dispose['gadget_type']) ? $dispose['gadget_type'] : 'N/A'; ?></td>
+                  <td><?php echo isset($dispose['quantity']) ? $dispose['quantity'] : 'N/A'; ?></td>
                   <td>₱<?php echo number_format($dispose['transaction_total'], 2); ?></td>
                   <td><?php echo date('M d, Y', strtotime($dispose['collection_date'])); ?></td>
                   <td>
@@ -187,8 +187,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <td><?php echo $i++; ?>.</td>
                   <td><?php echo $dispose['transaction_code']; ?></td>
                   <td><?php echo $dispose['name']; ?></td>
-                  <td><?php echo $dispose['gadget_type']; ?></td>
-                  <td><?php echo $dispose['quantity']; ?></td>
+                  <td><?php echo isset($dispose['gadget_type']) ? $dispose['gadget_type'] : 'N/A'; ?></td>
+                  <td><?php echo isset($dispose['quantity']) ? $dispose['quantity'] : 'N/A'; ?></td>
                   <td>₱<?php echo number_format($dispose['transaction_total'], 2); ?></td>
                   <td><?php echo date('M d, Y', strtotime($dispose['collection_date'])); ?></td>
                   <td>
